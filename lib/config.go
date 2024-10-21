@@ -31,6 +31,14 @@ type TemplateSources struct {
 	TrustedDomains  []string // trusted domains for remote templates/workflows
 }
 
+type TemplateUpdatedSources struct {
+	Templates       []string // template file/directory paths
+	Workflows       []string // workflow file/directory paths
+	Slackflows      []string
+	SlackIds        []int
+	TrustedDomains  []string // trusted domains for remote templates/workflows
+}
+
 // WithTemplatesOrWorkflows sets templates / workflows to use /load
 func WithTemplatesOrWorkflows(sources TemplateSources) NucleiSDKOptions {
 	return func(e *NucleiEngine) error {
